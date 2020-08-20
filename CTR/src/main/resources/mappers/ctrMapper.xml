@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctr.mappers.ctrMapper">
+	
+	<!--파일 목록 -->
+	<select id="list" resultType="com.ctr.domain.csv_nameVO">
+		select NAME from ctr_name
+	</select>
+	
+	<!--파일 이름 입력 -->
+	<!-- 상품 등록 -->
+	<insert id="register">
+		insert into ctr_name (NAME)
+		values (#{name})
+	</insert>
+	
+
+</mapper>
