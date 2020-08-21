@@ -29,7 +29,7 @@ public class CanvasjsChartData {
 		List<Map<Object,Object>> dataPoints1 = new ArrayList<Map<Object,Object>>();
 		List<Map<Object,Object>> dataPoints2 = new ArrayList<Map<Object,Object>>();
 		List<Map<Object,Object>> dataPoints3 = new ArrayList<Map<Object,Object>>();
-		
+
 		int Click = 0;
 		int SKT1 = 0;
 		int LG1 = 0;
@@ -65,8 +65,7 @@ public class CanvasjsChartData {
 		String lg0 = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'lg' AND is_click = 0";
 		String kt0 = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'kt' AND is_click = 0";
 		String unkwon0 = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'unknown' AND is_click = 0";
-
-
+		
 		Click = jdbcTemplate.queryForObject(Click1, Integer.class);
 		SKT1 = jdbcTemplate.queryForObject(sk1, Integer.class);
 		LG1 = jdbcTemplate.queryForObject(lg1, Integer.class);
@@ -80,7 +79,7 @@ public class CanvasjsChartData {
 		UNKWON0 = jdbcTemplate.queryForObject(unkwon0, Integer.class);
 
 
-
+		
 		map = new HashMap<Object,Object>(); map.put("name", "Click"); map.put("y", Click); map.put("color", "#E7823A");dataPoints1.add(map);
 		map = new HashMap<Object,Object>(); map.put("name", "Non_Click"); map.put("y", Non_Click); map.put("color", "#546BC1");dataPoints1.add(map);	
 

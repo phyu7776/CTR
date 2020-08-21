@@ -36,4 +36,11 @@ public class CanvasjsChartServiceImpl implements CanvasjsChartService {
 		// TODO Auto-generated method stub
 		return canvasjsChartDao.list();
 	}
+
+
+	@Override
+	public int total() throws Exception {
+		// TODO Auto-generated method stub
+		return canvasjsChartDao.total();
+	}
 }   

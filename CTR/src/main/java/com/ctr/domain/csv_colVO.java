@@ -28,6 +28,7 @@ public class csv_colVO {
 	private String adomain;
 	private String cost_ratio;
 	private String is_click;
+	private int total;
 	
 	
 	public String getBid_time() {
@@ -185,5 +186,11 @@ public class csv_colVO {
 	}
 	public void setIs_click(String is_click) {
 		this.is_click = is_click;
+	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
 	}
 }

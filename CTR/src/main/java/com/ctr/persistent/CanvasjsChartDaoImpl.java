@@ -35,4 +35,9 @@ public class CanvasjsChartDaoImpl implements CanvasjsChartDao {
 		// TODO Auto-generated method stub
 		return sql.selectList(namespace + ".list");
 	}
+	@Override
+	public int total() throws Exception {
+		// TODO Auto-generated method stub
+		return sql.selectOne(namespace + ".total");
+	}
 }

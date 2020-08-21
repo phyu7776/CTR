@@ -13,4 +13,6 @@ public interface CanvasjsChartService {
 //	public void register(csv_nameVO vo) throws Exception;
  
 	public List<csv_nameVO> list() throws Exception;
+	
+	public int total() throws Exception;
 }

@@ -27,12 +27,12 @@
 	window.onload = function() {
 
 		var dps = [ [], [], [] ];
-		var totalVisitors = 883000;
 
 		var yValue;
 		var label;
 		var name;
 		var color;
+		var totalVisitors = ${total}
 
 		<c:forEach items="${dataPointsList}" var="dataPoints" varStatus="loop">
 		<c:forEach items="${dataPoints}" var="dataPoint">
@@ -89,7 +89,6 @@
 				text : "클릭 비율"
 			},
 			subtitles : [ {
-				text : "Click on Any Segment to Drilldown",
 				backgroundColor : "#2eacd1",
 				fontSize : 16,
 				fontColor : "white",
