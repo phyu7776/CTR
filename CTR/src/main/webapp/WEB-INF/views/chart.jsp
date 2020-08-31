@@ -24,6 +24,7 @@
 }
 </style>
 <script type="text/javascript">
+
 	window.onload = function() {
 
 		var dps = [ [], [], [] ];

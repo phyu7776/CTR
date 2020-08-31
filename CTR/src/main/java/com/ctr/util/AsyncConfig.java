@@ -19,7 +19,7 @@ public class AsyncConfig implements AsyncConfigurer{
 	//기본 Thread 수
 	private static int TASK_CORE_POOL_SIZE = 1;
 	//최대 Thread 수
-	private static int TASK_MAX_POOL_SIZE = 1;
+	private static int TASK_MAX_POOL_SIZE = 3;
 	//QUEUE 수
 	private static int TASK_QUEUE_CAPACITY = 0;
 	//Thread Bean Name
