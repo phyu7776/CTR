@@ -81,7 +81,7 @@ public class HomeController {
 				if(f.get().equals("End")) {
 					Switch = true;
 					System.out.println(f);
-					model.addAttribute("END");
+					model.addAttribute("END","END");
 				}
 			}
 		} catch (InterruptedException e) {
