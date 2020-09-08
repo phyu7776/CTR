@@ -57,7 +57,7 @@ public class CanvasjsChartData {
 		//String[] temp = null;
 		BufferedReader br = null;
 		String line;
-		File path = new File("D:\\new csv data");
+		File path = new File("E:\\new csv data");
 		File[] fileList = path.listFiles();
 		File[] filtered_Filelist = null;
 		List<String> dbpath = new ArrayList<String>(); // db 안의 경로
