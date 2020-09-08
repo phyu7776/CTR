@@ -71,7 +71,7 @@
 			</c:forEach>
 		</c:forEach>
 		
-		<!-- ------------------------------------------ -->
+ 
 		
 		var visitorsData = {
 			"New vs Returning Visitors" : [ {
