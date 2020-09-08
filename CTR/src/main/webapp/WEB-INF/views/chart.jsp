@@ -48,7 +48,7 @@
 
 	window.onload = function() {
 
-		var dps = [ [], [], [] ];
+		var dps = [ [], [], [], [] ];
 
 		var yValue;
 		var label;
@@ -104,8 +104,8 @@
 		};
 		
 		var visitorsData2 = {
-				"New vs Returning Visitors" : [ {
-					click : visitorsChartDrilldownHandler,
+				"New vs Returning Visitors2" : [ {
+					click : visitorsChartDrilldownHandler2,
 					cursor : "pointer",
 					explodeOnClick : false,
 					innerRadius : "75%",
@@ -115,7 +115,7 @@
 					showInLegend : true,
 					startAngle : 90,
 					type : "doughnut",
-					dataPoints : dps[0]
+					dataPoints : dps[3]
 				} ],
 				"Click" : [ {
 					color : "#E7823A",
@@ -135,7 +135,6 @@
 		
 		console.log(visitorsData["New vs Returning Visitors"])
 
-		<!-- ------------------------------------------ -->
 		
 		var newVSReturningVisitorsOptions = {
 			animationEnabled : true,
@@ -181,7 +180,7 @@
 				data : []
 			};
 
-		<!-- ------------------------------------------ -->
+
 		
 		var visitorsDrilldownedChartOptions = {
 			animationEnabled : true,
@@ -202,17 +201,36 @@
 			data : []
 		};
 		
-		<!-- ------------------------------------------ -->
+		var visitorsDrilldownedChartOptions2 = {
+				animationEnabled : true,
+				theme : "light2",
+				axisX: {
+					labelFontColor: "#717171",
+					lineColor: "#a2a2a2",
+					tickColor: "#a2a2a2"
+				},
+				axisY : {
+					gridThickness : 0,
+					includeZero : false,
+					labelFontColor : "#717171",
+					lineColor : "#a2a2a2",
+					tickColor : "#a2a2a2",
+					lineThickness : 1
+				},
+				data : []
+			};
+
+
 		
 		var chart = new CanvasJS.Chart("chartContainer", newVSReturningVisitorsOptions);
 		chart.options.data = visitorsData["New vs Returning Visitors"];
 		chart.render();
 		
 		var chart2 = new CanvasJS.Chart("chartContainer2", newVSReturningVisitorsOptions2);
-		chart2.options.data = visitorsData2["New vs Returning Visitors"];
+		chart2.options.data = visitorsData2["New vs Returning Visitors2"];
 		chart2.render();
-		
-		<!-- ------------------------------------------ -->
+
+
 
 		function visitorsChartDrilldownHandler(e) {
 			chart = new CanvasJS.Chart("chartContainer", visitorsDrilldownedChartOptions);
@@ -222,15 +240,34 @@
 			chart.render();
 			$("#backButton").toggleClass("invisible");
 		}
-
+		
 		$("#backButton")
+		.click(
+				function() {
+					$(this).toggleClass("invisible");
+					chart = new CanvasJS.Chart("chartContainer",
+							newVSReturningVisitorsOptions);
+					chart.options.data = visitorsData["New vs Returning Visitors"];
+					chart.render();
+				});
+		
+		function visitorsChartDrilldownHandler2(e) {
+			chart2 = new CanvasJS.Chart("chartContainer2", visitorsDrilldownedChartOptions2);
+			chart2.options.data = visitorsData[e.dataPoint.name];
+			chart2.options.title = { text : e.dataPoint.name }
+			chart2.options.label = { label: e.dataPoint.label}
+			chart2.render();
+			$("#backButton2").toggleClass("invisible");
+		}
+		
+
+		$("#backButton2 ")
 				.click(
 						function() {
 							$(this).toggleClass("invisible");
-							chart = new CanvasJS.Chart("chartContainer",
-									newVSReturningVisitorsOptions);
-							chart.options.data = visitorsData["New vs Returning Visitors"];
-							chart.render();
+							chart2 = new CanvasJS.Chart("chartContainer2",newVSReturningVisitorsOptions2);
+							chart2.options.data = visitorsData["New vs Returning Visitors2"];
+							chart2.render();
 						});
 
 	}
@@ -244,7 +281,7 @@
 		</div>
 		<div class="parent">
 			<div id="chartContainer2" style="height: 370px; width:100%;"></div>
-			<button class="btn invisible" id="backButton">&lt; Back</button>
+			<button class="btn invisible" id="backButton2">&lt; Back</button>
 		</div>
 	</div>
 </html>

@@ -256,6 +256,7 @@ public class CanvasjsChartData {
 		List<Map<Object,Object>> dataPoints1 = new ArrayList<Map<Object,Object>>();
 		List<Map<Object,Object>> dataPoints2 = new ArrayList<Map<Object,Object>>();
 		List<Map<Object,Object>> dataPoints3 = new ArrayList<Map<Object,Object>>();
+		List<Map<Object,Object>> dataPoints4 = new ArrayList<Map<Object,Object>>();
 
 		int Click = 0;
 		int SKT1 = 0;
@@ -268,6 +269,11 @@ public class CanvasjsChartData {
 		int LG0 = 0;
 		int KT0 = 0;
 		int UNKWON0 = 0;
+		
+		int SK = 0;
+		int LG = 0;
+		int KT = 0;
+		int UNKWON = 0;
 
 
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -293,6 +299,11 @@ public class CanvasjsChartData {
 		String kt0 = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'kt' AND is_click = 0";
 		String unkwon0 = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'unknown' AND is_click = 0";
 		
+		String sk = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'sk'";
+		String lg = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'lg'";
+		String kt = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'kt'";
+		String unkwon = "SELECT COUNT(carrier) FROM ctr_column WHERE carrier LIKE 'unknown'";
+		
 		Click = jdbcTemplate.queryForObject(Click1, Integer.class);
 		SKT1 = jdbcTemplate.queryForObject(sk1, Integer.class);
 		LG1 = jdbcTemplate.queryForObject(lg1, Integer.class);
@@ -304,9 +315,13 @@ public class CanvasjsChartData {
 		LG0 = jdbcTemplate.queryForObject(lg0, Integer.class);
 		KT0 = jdbcTemplate.queryForObject(kt0, Integer.class);
 		UNKWON0 = jdbcTemplate.queryForObject(unkwon0, Integer.class);
-
-
 		
+		SK = jdbcTemplate.queryForObject(sk,Integer.class);
+		LG = jdbcTemplate.queryForObject(lg,Integer.class);
+		KT = jdbcTemplate.queryForObject(kt,Integer.class);
+		UNKWON = jdbcTemplate.queryForObject(unkwon,Integer.class);
+		
+
 		map = new HashMap<Object,Object>(); map.put("name", "Click"); map.put("y", Click); map.put("color", "#E7823A");dataPoints1.add(map);
 		map = new HashMap<Object,Object>(); map.put("name", "Non_Click"); map.put("y", Non_Click); map.put("color", "#546BC1");dataPoints1.add(map);	
 
@@ -319,11 +334,16 @@ public class CanvasjsChartData {
 		map = new HashMap<Object,Object>(); map.put("label", "LG"); map.put("y", LG0);dataPoints3.add(map);
 		map = new HashMap<Object,Object>(); map.put("label", "KT"); map.put("y", KT0);dataPoints3.add(map);
 		map = new HashMap<Object,Object>(); map.put("label", "UNKWON"); map.put("y", UNKWON0);dataPoints3.add(map);
-
-
+		
+		map = new HashMap<Object,Object>(); map.put("name", "SKT"); map.put("y", SK); map.put("color", "#E7823A");dataPoints4.add(map);
+		map = new HashMap<Object,Object>(); map.put("name", "LG"); map.put("y", LG); map.put("color", "#546BC1");dataPoints4.add(map);
+		map = new HashMap<Object,Object>(); map.put("name", "KT"); map.put("y", KT); map.put("color", "#54c158");dataPoints4.add(map);
+		map = new HashMap<Object,Object>(); map.put("name", "UNKWON"); map.put("y", UNKWON); map.put("color", "#c15454");dataPoints4.add(map);
+	
 		list.add(dataPoints1);
 		list.add(dataPoints2);
 		list.add(dataPoints3);
+		list.add(dataPoints4);
 		
 		System.out.println("Thread End");
 		return new AsyncResult<String>("End");
