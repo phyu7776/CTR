@@ -3,73 +3,82 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<title>CTR Result</title>
+		<title>CTR Result</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-<style>
-#backButton {
-	border-radius: 4px;
-	padding: 8px;
-	border: none;
-	font-size: 16px;
-	background-color: #2eacd1;
-	color: white;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	cursor: pointer;
-}
+	<style>
+		#backButton {
+			border-radius: 4px;
+			padding: 8px;
+			border: none;
+			font-size: 16px;
+			background-color: #2eacd1;
+			color: white;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+		}
+		
+		.parent_mini {
+			float: left;
+			margin: 1%;
+			width:31%;
+			text-align: center;
+		}
+		
+		.parent {
+			float: left;
+			margin: 1%;
+			width:48%;
+		}
 
-.parent {
-	float: left;
-	margin: 1%;
-	width:48%;
-}
+		.clearfix:after {
+			display:block;
+			content:"";
+			clear:both;
+		}
 
-.clearfix:after {
-	display:block;
-	content:"";
-	clear:both;
-}
+		.invisible {
+			display: none;
+		}
+		
+	</style>
+		<script type="text/javascript">
 
-.invisible {
-	display: none;
-}
-</style>
-<script type="text/javascript">
+			window.onload = function() {
 
-	window.onload = function() {
+				var dps = [ [], [], [], [] ];
+		
+				var yValue;
+				var label;
+				var name;
+				var color;
+				var totalVisitors = ${total}
 
-		var dps = [ [], [], [], [] ];
-
-		var yValue;
-		var label;
-		var name;
-		var color;
-		var totalVisitors = ${total}
-
-		<c:forEach items="${dataPointsList}" var="dataPoints" varStatus="loop">
-			<c:forEach items="${dataPoints}" var="dataPoint">
-				yValue = parseFloat("${dataPoint.y}");
-				label = "${dataPoint.label}";
-				name = "${dataPoint.name}";
-				color = "${dataPoint.color}";
-				dps[parseInt("${loop.index}")].push({
-					label : label,
-					y : yValue,
-					name : name,
-					color : color,
-				});
-			</c:forEach>
-		</c:forEach>
+				<c:forEach items="${dataPointsList}" var="dataPoints" varStatus="loop">
+					<c:forEach items="${dataPoints}" var="dataPoint">
+						yValue = parseFloat("${dataPoint.y}");
+						label = "${dataPoint.label}";
+						name = "${dataPoint.name}";
+						color = "${dataPoint.color}";
+						dps[parseInt("${loop.index}")].push({
+							label : label,
+							y : yValue,
+							name : name,
+							color : color,
+						});
+					</c:forEach>
+				</c:forEach>
 		
  
 		
@@ -271,17 +280,37 @@
 						});
 
 	}
-</script>
-</head>
-<body> 
-	<div class="clearfix">
-		<div class="parent">
-			<div id="chartContainer" style="height: 370px; width:100%;"></div>
-			<button class="btn invisible" id="backButton">&lt; Back</button>
+			var ctx = document.getElementById('myChart'); 
+			var ctx = document.getElementById('myChart').getContext('2d'); 
+			var ctx = $('#myChart'); // jQuery 사용 var ctx = 'myChart';
+		</script>
+	</head>
+	<body> 
+	
+	
+		<div class="clearfix">
+			<div>
+				<div class="parent_mini">
+					<canvas id="myChart"></canvas>
+					<img src="/resources/Loding/Progress_Loading.gif" alt="로딩중" />
+				</div>
+				<div class="parent_mini">
+					<img src="/resources/Loding/Progress_Loading.gif" alt="로딩중" />
+				</div>
+				<div class="parent_mini">
+					<img src="/resources/Loding/Progress_Loading.gif" alt="로딩중" />
+				</div>
+			</div>
 		</div>
-		<div class="parent">
-			<div id="chartContainer2" style="height: 370px; width:100%;"></div>
-			<button class="btn invisible" id="backButton2">&lt; Back</button>
+		<div class="clearfix">
+			<div class="parent">
+				<div id="chartContainer" style="height: 370px; width:100%;"></div>
+				<button class="btn invisible" id="backButton">&lt; Back</button>
+			</div>
+			<div class="parent">
+				<div id="chartContainer2" style="height: 370px; width:100%;"></div>
+				<button class="btn invisible" id="backButton2">&lt; Back</button>
+			</div>
 		</div>
-	</div>
+	</body>
 </html>
