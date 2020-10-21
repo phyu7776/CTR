@@ -25,7 +25,7 @@ public class fileInput {
 
 
 		String driver = "org.mariadb.jdbc.Driver";
-		String url = "jdbc:mariadb://127.0.0.1:3306/ctr";
+		String url = "jdbc:mariadb://127.0.0.1:3307/ctr";
 		String user = "root";
 		String password = "1111";
 
@@ -67,7 +67,7 @@ public class fileInput {
 					for(int k=0;k<dbpath.size();k++) {
 
 						System.out.println(filtered_Filelist[i]);
-
+						
 						nstmt.setString(1, filtered_Filelist[i].getAbsolutePath());
 						int s = nstmt.executeUpdate();
 

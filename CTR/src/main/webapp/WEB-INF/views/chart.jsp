@@ -57,7 +57,7 @@
 
 			window.onload = function() {
 
-				var dps = [ [], [], [], [] ];
+				var dps = [ [], [], [], [] ,[] ,[] ,[] ,[]];
 		
 				var yValue;
 				var label;
@@ -126,19 +126,31 @@
 					type : "doughnut",
 					dataPoints : dps[3]
 				} ],
-				"Click" : [ {
+				"LG" : [ {
 					color : "#E7823A",
-					name : "New Visitors",
+					name : "LG",
 					type : "column",
 					display : true,
-					dataPoints : dps[1],
+					dataPoints : dps[4],
 					
 				} ],
-				"Non_Click" : [ {
+				"KT" : [ {
 					color : "#546BC1",
-					name : "Returning Visitors",
+					name : "KT",
 					type : "column",
-					dataPoints : dps[2]
+					dataPoints : dps[5]
+				} ],
+				"SKT" : [ {
+					color : "#546BC1",
+					name : "SKT",
+					type : "column",
+					dataPoints : dps[6]
+				} ],
+				"UNKWON" : [ {
+					color : "#546BC1",
+					name : "UNKWON",
+					type : "column",
+					dataPoints : dps[7]
 				} ],
 			};
 		
@@ -262,7 +274,7 @@
 		
 		function visitorsChartDrilldownHandler2(e) {
 			chart2 = new CanvasJS.Chart("chartContainer2", visitorsDrilldownedChartOptions2);
-			chart2.options.data = visitorsData[e.dataPoint.name];
+			chart2.options.data = visitorsData2[e.dataPoint.name];
 			chart2.options.title = { text : e.dataPoint.name }
 			chart2.options.label = { label: e.dataPoint.label}
 			chart2.render();
@@ -275,7 +287,7 @@
 						function() {
 							$(this).toggleClass("invisible");
 							chart2 = new CanvasJS.Chart("chartContainer2",newVSReturningVisitorsOptions2);
-							chart2.options.data = visitorsData["New vs Returning Visitors2"];
+							chart2.options.data = visitorsData2["New vs Returning Visitors2"];
 							chart2.render();
 						});
 
@@ -283,6 +295,7 @@
 			var ctx = document.getElementById('myChart'); 
 			var ctx = document.getElementById('myChart').getContext('2d'); 
 			var ctx = $('#myChart'); // jQuery 사용 var ctx = 'myChart';
+			
 		</script>
 	</head>
 	<body> 
@@ -291,7 +304,6 @@
 		<div class="clearfix">
 			<div>
 				<div class="parent_mini">
-					<canvas id="myChart"></canvas>
 					<img src="/resources/Loding/Progress_Loading.gif" alt="로딩중" />
 				</div>
 				<div class="parent_mini">
