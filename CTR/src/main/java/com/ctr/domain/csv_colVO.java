@@ -28,9 +28,149 @@ public class csv_colVO {
 	private String adomain;
 	private String cost_ratio;
 	private String is_click;
+	
+	// os 갯수
 	private int total;
+	private int ios;
+	private int android;
+	private int unkwon;
+	
+	//make 갯수
+	private int mk_apple;
+	private int mk_samsung;
+	private int mk_lg;
+	private int mk_unknown;
+	
+	//시간
+	private int ck02;
+	private int ck04;
+	private int ck06;
+	private int ck08;
+	private int ck10;
+	private int ck12;
+	private int ck14;
+	private int ck16;
+	private int ck18;
+	private int ck20;
+	private int ck22;
+	private int ck24;
 	
 	
+	
+	public int getCk02() {
+		return ck02;
+	}
+	public void setCk02(int ck02) {
+		this.ck02 = ck02;
+	}
+	public int getCk04() {
+		return ck04;
+	}
+	public void setCk04(int ck04) {
+		this.ck04 = ck04;
+	}
+	public int getCk06() {
+		return ck06;
+	}
+	public void setCk06(int ck06) {
+		this.ck06 = ck06;
+	}
+	public int getCk08() {
+		return ck08;
+	}
+	public void setCk08(int ck08) {
+		this.ck08 = ck08;
+	}
+	public int getCk10() {
+		return ck10;
+	}
+	public void setCk10(int ck10) {
+		this.ck10 = ck10;
+	}
+	public int getCk12() {
+		return ck12;
+	}
+	public void setCk12(int ck12) {
+		this.ck12 = ck12;
+	}
+	public int getCk14() {
+		return ck14;
+	}
+	public void setCk14(int ck14) {
+		this.ck14 = ck14;
+	}
+	public int getCk16() {
+		return ck16;
+	}
+	public void setCk16(int ck16) {
+		this.ck16 = ck16;
+	}
+	public int getCk18() {
+		return ck18;
+	}
+	public void setCk18(int ck18) {
+		this.ck18 = ck18;
+	}
+	public int getCk20() {
+		return ck20;
+	}
+	public void setCk20(int ck20) {
+		this.ck20 = ck20;
+	}
+	public int getCk22() {
+		return ck22;
+	}
+	public void setCk22(int ck22) {
+		this.ck22 = ck22;
+	}
+	public int getCk24() {
+		return ck24;
+	}
+	public void setCk24(int ck24) {
+		this.ck24 = ck24;
+	}
+	public int getMk_apple() {
+		return mk_apple;
+	}
+	public void setMk_apple(int mk_apple) {
+		this.mk_apple = mk_apple;
+	}
+	public int getMk_samsung() {
+		return mk_samsung;
+	}
+	public void setMk_samsung(int mk_samsung) {
+		this.mk_samsung = mk_samsung;
+	}
+	public int getMk_lg() {
+		return mk_lg;
+	}
+	public void setMk_lg(int mk_lg) {
+		this.mk_lg = mk_lg;
+	}
+	public int getMk_unknown() {
+		return mk_unknown;
+	}
+	public void setMk_unknown(int mk_unknown) {
+		this.mk_unknown = mk_unknown;
+	}
+	public int getUnkwon() {
+		return unkwon;
+	}
+	public void setUnkwon(int unkwon) {
+		this.unkwon = unkwon;
+	}
+	public int getIos() {
+		return ios;
+	}
+	public void setIos(int ios) {
+		this.ios = ios;
+	}
+	public int getAndroid() {
+		return android;
+	}
+	public void setAndroid(int android) {
+		this.android = android;
+	}
 	public String getBid_time() {
 		return bid_time;
 	}

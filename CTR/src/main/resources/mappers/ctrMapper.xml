@@ -13,5 +13,82 @@
 	<select id="total" resultType="int">
 		select Count(*) from ctr_column
 	</select>
-
+	
+	
+	
+	<!-- ios -->
+	<select id="ios" resultType="int">
+		SELECT COUNT(OS) FROM ctr_column WHERE os LIKE 'ios'
+	</select>
+	
+	<!-- android -->
+	<select id="android" resultType="int">
+		SELECT COUNT(OS) FROM ctr_column WHERE os LIKE 'android'
+	</select>
+	
+	<!-- unkwon -->
+	<select id="unkwon" resultType="int">
+		SELECT COUNT(OS) FROM ctr_column WHERE os LIKE 'unkwon'
+	</select>
+	
+	
+	
+	<!-- apple -->
+	<select id="mk_apple" resultType="int">
+		SELECT COUNT(make) FROM ctr_column WHERE make LIKE 'apple'
+	</select>
+	
+	<!-- samsung -->
+	<select id="mk_samsung" resultType="int">
+		SELECT COUNT(make) FROM ctr_column WHERE make LIKE 'samsung'
+	</select>
+	
+	<!-- lg -->
+	<select id="mk_lg" resultType="int">
+		SELECT COUNT(make) FROM ctr_column WHERE make LIKE 'lg'
+	</select>
+	
+	<!-- unknown -->
+	<select id="mk_unkwon" resultType="int">
+		SELECT COUNT(make) FROM ctr_column WHERE make LIKE 'unknown'
+	</select>
+	
+	<!-- Time -->
+	<select id="ck02" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '00:00:00' AND '02:00:00'
+	</select>
+	<select id="ck04" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '02:00:00' AND '04:00:00'
+	</select>
+	<select id="ck06" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '04:00:00' AND '06:00:00'
+	</select>
+	<select id="ck08" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '06:00:00' AND '08:00:00'
+	</select>
+	<select id="ck10" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '08:00:00' AND '10:00:00'
+	</select>
+	<select id="ck12" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '10:00:00' AND '12:00:00'
+	</select>
+	<select id="ck14" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '12:00:00' AND '14:00:00'
+	</select>
+	<select id="ck16" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '14:00:00' AND '16:00:00'
+	</select>
+	<select id="ck18" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '16:00:00' AND '18:00:00'
+	</select>
+	<select id="ck20" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '18:00:00' AND '20:00:00'
+	</select>
+	<select id="ck22" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '20:00:00' AND '22:00:00'
+	</select>
+	<select id="ck24" resultType="int">
+		SELECT count(time(bid_time)) FROM ctr_column WHERE time(bid_time) BETWEEN '22:00:00' AND '24:00:00'
+	</select>
+	
 </mapper>

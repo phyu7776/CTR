@@ -94,30 +94,30 @@ public class HomeController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public ModelAndView csvupdate(Model model ,csv_nameVO vo ,ModelMap modelMap) throws Exception {
-		logger.info("post csvfile");
-
-		List<csv_nameVO> list = null;
-		list = adminService.list();
-		model.addAttribute("list",list);
-
-		ModelAndView mav = new ModelAndView("home");
-		try {
-			//Task 실행가능 여부 확
-			if(asyncConfig.checkSampleTaskExecute()) {
-				asyncTaskService.readcsv();
-//				int total = canvasjsChartService.total();
-//				modelMap.addAttribute("total", total);
-			}else {
-				System.out.println("Thread 개수 초과");
-			}
-		} catch (Exception e) {
-			System.out.println("Thread Err :: " + e.getMessage());
-		}
-		
-		return mav;
-	}
+//	@RequestMapping(value = "/update", method = RequestMethod.GET)
+//	public ModelAndView csvupdate(Model model ,csv_nameVO vo ,ModelMap modelMap) throws Exception {
+//		logger.info("post csvfile");
+//
+//		List<csv_nameVO> list = null;
+//		list = adminService.list();
+//		model.addAttribute("list",list);
+//
+//		ModelAndView mav = new ModelAndView("home");
+//		try {
+//			//Task 실행가능 여부 확
+//			if(asyncConfig.checkSampleTaskExecute()) {
+//				asyncTaskService.readcsv();
+////				int total = canvasjsChartService.total();
+////				modelMap.addAttribute("total", total);
+//			}else {
+//				System.out.println("Thread 개수 초과");
+//			}
+//		} catch (Exception e) {
+//			System.out.println("Thread Err :: " + e.getMessage());
+//		}
+//		
+//		return mav;
+//	}
 }
 
 

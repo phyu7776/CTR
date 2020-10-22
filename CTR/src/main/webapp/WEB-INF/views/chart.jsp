@@ -345,11 +345,11 @@
 						      name: 'Browser share',
 						      innerSize: '50%',
 						      data: [
-						         ['IOS',   45.0],
-						         ['ANDROID',       26.8],
+						         ['IOS',   ${ios}],
+						         ['ANDROID',       ${android}],
 						         {
 						            name: 'Unkwon',
-						            y: 45.7,
+						            y:  ${unkwon},
 						            dataLabels: {
 						               enabled: false
 						            }
@@ -402,22 +402,22 @@
 						      }
 						   };
 						   var series2= [{
-						      type: 'pie',
-						      name: 'Browser share',
-						      innerSize: '50%',
-						      data: [
-						         ['APPLE',   45.0],
-						         ['SAMSUNG',       26.8],
-						         ['LG', 12.8],
-						         {
-						            name: 'Unkwon',
-						            y: 45.7,
-						            dataLabels: {
-						               enabled: false
-						            }
-						         }
-						      ]
-						   }];     
+							      type: 'pie',
+							      name: 'Browser share',
+							      innerSize: '50%',
+							      data: [
+							         ['APPLE',   ${mk_apple}],
+							         ['SAMSUNG',       ${mk_samsung}],
+							         ['LG',       ${mk_lg}],
+							         {
+							            name: 'UNKWON',
+							            y:  ${mk_unknown},
+							            dataLabels: {
+							               enabled: false
+							            }
+							         }
+							      ]
+							   }];     
 						      
 						   var json2 = {};   
 						   json2.chart = chart2; 
@@ -467,18 +467,18 @@
 						   var series3= [{
 						            name: '접속자',
 						            data: [
-						            	['02 시', 10.5],
-						                ['04 시', 10.4],
-						                ['06 시', 23.7],
-						                ['08 시', 16.1],
-						                ['10 시', 14.2],
-						                ['12 시', 14.0],
-						                ['14 시', 12.5],
-						                ['16 시', 12.1],
-						                ['18 시', 11.8],
-						                ['20 시', 11.7],
-						                ['22 시', 11.1],
-						                ['24 시', 11.1]
+						            	['02 시', ${ck02}],
+						                ['04 시', ${ck04}],
+						                ['06 시', ${ck06}],
+						                ['08 시', ${ck08}],
+						                ['10 시', ${ck10}],
+						                ['12 시', ${ck12}],
+						                ['14 시', ${ck14}],
+						                ['16 시', ${ck16}],
+						                ['18 시', ${ck18}],
+						                ['20 시', ${ck20}],
+						                ['22 시', ${ck22}],
+						                ['24 시', ${ck24}]
 						            ],
 						            dataLabels3: {
 						                enabled: true,
